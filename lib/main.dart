@@ -1,11 +1,15 @@
 import 'package:eventflow/about.dart';
+import 'package:eventflow/account.dart';
 import 'package:eventflow/arts.dart';
 import 'package:eventflow/club.dart';
 import 'package:eventflow/dashboard.dart';
+import 'package:eventflow/editprofile.dart';
 import 'package:eventflow/events.dart';
+import 'package:eventflow/hoemescreen.dart';
 import 'package:eventflow/instruction.dart';
 import 'package:eventflow/loginscreen.dart';
 import 'package:eventflow/notification.dart';
+import 'package:eventflow/register.dart';
 import 'package:eventflow/request.dart';
 import 'package:eventflow/sports.dart';
 import 'package:eventflow/status.dart';
@@ -28,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home:NotificationPage(),
+      home: EditProfilePage(),
     
     );
   }
@@ -39,8 +43,8 @@ class MyApp extends StatelessWidget {
 
 
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
+class MyHomePa666 extends StatefulWidget {
+  const MyHomePa666({super.key, required this.title});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -54,10 +58,10 @@ class MyHomePage extends StatefulWidget {
   final String title;
 
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  State<MyHomePa666> createState() => _MyHomePa666State();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyHomePa666State extends State<MyHomePa666> {
   int _counter = 0;
 
   void _incrementCounter() {

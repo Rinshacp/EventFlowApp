@@ -1,61 +1,63 @@
 import 'package:flutter/material.dart';
 
+class NotificationScreen extends StatelessWidget {
+  final List<Map<String, String>> notifications = [
+    {
+      'title': 'Event Reminder',
+      'message': 'Don\'t forget to attend the Tech Meetup tomorrow at 10 AM.',
+      'time': '1 hour ago',
+    },
+    {
+      'title': 'New Event Added',
+      'message': 'A new event "Flutter Workshop" has been added to your calendar.',
+      'time': '2 days ago',
+    },
+    {
+      'title': 'Event Update',
+      'message': 'The location for "Annual Music Fest" has been updated.',
+      'time': '3 days ago',
+    },
+  ];
 
-
-class NotificationPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('User Request to Join Club'),
-        backgroundColor: Colors.blue,
+        title: Text('Notifications'),
+        centerTitle: true,
       ),
-      body: Center(
-        child: Card(
-          margin: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-          elevation: 5,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(8),
-          ),
-          child: Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Text(
-                  'Notification',
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
+      body: notifications.isEmpty
+          ? Center(
+              child: Text(
+                'No notifications yet!',
+                style: TextStyle(fontSize: 16, color: Colors.grey),
+              ),
+            )
+          : ListView.builder(
+              itemCount: notifications.length,
+              itemBuilder: (context, index) {
+                final notification = notifications[index];
+                return Card(
+                  margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                  child: ListTile(
+                    leading: Icon(Icons.notifications, color: Colors.blue),
+                    title: Text(notification['title']!),
+                    subtitle: Text(notification['message']!),
+                    trailing: Text(
+                      notification['time']!,
+                      style: TextStyle(color: Colors.grey, fontSize: 12),
+                    ),
                   ),
-                ),
-                SizedBox(height: 10),
-                
-                Text(
-                  'Notification: ',
-                  style: TextStyle(fontSize: 16, color: Colors.grey[700]),
-                ),
-                Text(
-                  'Date: ',
-                  style: TextStyle(fontSize: 16, color: Colors.grey[700]),
-                ),
-                SizedBox(height: 20),
-                ElevatedButton(
-                  onPressed: () {
-                    // Action when the button is pressed
-                  },
-                  
-                  child: Text(
-                    'OK',
-                    style: TextStyle(fontSize: 16, color: const Color.fromARGB(255, 85, 83, 83)),
-                  ),
-                ),
-              ],
+                );
+              },
             ),
-          ),
-        ),
-      ),
     );
   }
+}
+
+void main() {
+  runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
+    home: NotificationScreen(),
+  ));
 }
