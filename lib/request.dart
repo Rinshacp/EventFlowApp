@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-
-
 class RequestPage extends StatefulWidget {
   @override
   _RequestPageState createState() => _RequestPageState();
@@ -11,7 +9,7 @@ class _RequestPageState extends State<RequestPage> {
   final TextEditingController interestController = TextEditingController();
   String? selectedItem = 'Select';
 
-  final List<String> items = ['folk dance', 'group dance'];
+  final List<String> items = ['Select', 'folk dance', 'group dance'];
 
   @override
   Widget build(BuildContext context) {

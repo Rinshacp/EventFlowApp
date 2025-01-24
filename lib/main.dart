@@ -5,6 +5,7 @@ import 'package:eventflow/club.dart';
 import 'package:eventflow/dashboard.dart';
 import 'package:eventflow/editprofile.dart';
 import 'package:eventflow/events.dart';
+import 'package:eventflow/gallery.dart';
 import 'package:eventflow/hoemescreen.dart';
 import 'package:eventflow/instruction.dart';
 import 'package:eventflow/loginscreen.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: EditProfilePage(),
+      home: RequestPage(),
     
     );
   }

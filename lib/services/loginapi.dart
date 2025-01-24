@@ -1,5 +1,3 @@
-import 'package:agrilcultural_majliz/screens/user/homepage.dart';
-import 'package:agrilcultural_majliz/services/getprofileApi.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 
@@ -35,9 +33,9 @@ Future<void> loginApi(
     if (statusCode == 200 && loginStatus == 'success') {
       userType = data['type'];
       lid = data['login_id'];
-      await getProfileAPI();
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (ctxt) => AgriHomePage()));
+      // await getProfileAPI();
+      // Navigator.pushReplacement(
+      //     context, MaterialPageRoute(builder: (ctxt) => AgriHomePage()));
       // // Navigate based on userType
       // if (userType == 'admin') {
       //   // Navigator.pushReplacement(
@@ -73,5 +71,7 @@ Future<void> loginApi(
       ),
     );  
     print('Error during login: $e');
-  }
+
+
+}
 }
